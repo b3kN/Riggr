@@ -10,12 +10,12 @@ contains all core files and dependencies. The core utilizes a small set of the
 dependencies' methods, so utilizing different versions can be done by simply
 changing the path in your RequireJS config.
 
-The core idea behind Riggr is to establish a simple application scaffold by creating
+The core idea behind Riggr is to establish a simple application structure by creating
 a core `app` definition and component controllers and views which are associated
 with routes.
 
 This is achieved by setting basic properties in the `main.js` file, then using
-the `rigg` method to build the build the application. For example:
+the `rigg` method to build the application. For example:
 
 Given the following structure:
 
@@ -33,6 +33,7 @@ views/
     pages/
       one.html
       two.html
+index.html
 ```
 
 The `js/main.js` would be similar to the following:
@@ -58,7 +59,7 @@ require(['require-config'], function () {
 });
 ```
 
-Then, the `js/controllers/app.js` file:
+Then, in the `js/controllers/app.js` file:
 
 ```javascript
 define([
@@ -80,10 +81,12 @@ define([
 });
 ```
 
+The `app` file can contain other methods and properties used throughout the application.
+
 ### Containers
 
 There are two containers required in the DOM for loading routes. The main `app`
-looks for a container element with `id="appContainer"`.
+looks for a container element  in `index.html` with `id="appContainer"`.
 
 In the `app.html` view (once initialized) all additional views are loaded into
 an element with `id="viewContainer"`.
@@ -92,9 +95,8 @@ From here, routing guides all other initialization operations within the applica
 
 ### Routing
 
-All routing should be defined in `app.js`. The `app.js` file is
-essentially the core controller and initializes all additional controllers. The
-controllers then respond to their assigned routes with the following methods:
+Routes defined in `app` are monitored by the router for a match. When matched/called the 
+controllers respond to their assigned routes with the following methods:
 
 ```javascript
 define([], function () {
@@ -126,7 +128,7 @@ define([], function () {
 ```
 
 Views should match the pathing of their associated controller and
-automatically load on route match (and if applicable, passing of the `before`
+automatically load on route match (and if applicable, after passing of the `before`
 handler).
 
 ### Knockout & Binding
@@ -195,6 +197,6 @@ req.fail(function() { .... });
 
 ## License
 
-Riggr is released under the MIT license and as such is completely free to use, 
+Riggr is released under the MIT license and as such is completely free to use,
 modify and redistribute.
 
