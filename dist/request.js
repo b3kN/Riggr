@@ -1,0 +1,1 @@
+!function(a,b){"function"==typeof define&&define.amd?define(["jquery"],b):"object"==typeof exports?module.exports=b(require("jquery")):a.Requester=b(a.$)}(this,function(a){var b=function(b){var c=b.url||!1,d=b.type||"GET",e="object"==typeof b.payload?b.payload:{};return a.ajax({url:c,type:d,data:e})};return b});
