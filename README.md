@@ -193,3 +193,8 @@ req.done(function() { .... });
 req.fail(function() { .... });
 ```
 
+## License
+
+Riggr is released under the MIT license and as such is completely free to use, 
+modify and redistribute.
+
