@@ -1,9 +1,9 @@
 /* global: requirejs */
 requirejs.config({
   paths: {
-    'text': 'vendor/requirejs-text/text',
-    'knockout': 'vendor/knockout/index',
-    'jquery': 'vendor/jquery/jquery',
+    'text': '../../src/lib/requirejs-text/text',
+    'knockout': '../../src/lib/knockout/index',
+    'jquery': '../../src/lib/jquery/dist/jquery',
     'riggr': '../../src/riggr',
     'router': '../../src/router',
     'observer': '../../src/observer',

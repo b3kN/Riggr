@@ -6,36 +6,48 @@ module.exports = function (grunt) {
     // Get package JSON
     pkg: grunt.file.readJSON('package.json'),
 
-    // JSBeautify
+    // JSBeautify Riggr files
     jsbeautifier: {
       riggr: {
-        src: 'src/**/*.js',
+        src: 'src/*.js',
         options: {
           config: '.jsbeautifyrc'
         }
       }
     },
 
-    // JSHint
+    // JSHint Riggr files
     jshint: {
       riggr: {
         options: {
           jshintrc: '.jshintrc'
         },
         files: {
-          src: 'src/**/*.js'
+          src: 'src/*.js'
         }
       }
     },
 
-    // Uglify
+    // Uglify Riggr file
     uglify: {
       riggr: {
         files: [{
           expand: true,
           cwd: 'src/',
-          src: '**/*.js',
+          src: '*.js',
           dest: 'dist/'
+        }]
+      }
+    },
+
+    // Copy libs
+    copy: {
+      libs: {
+        files: [{
+          expand: true,
+          cwd: 'src/lib/',
+          src: ['**/*'],
+          dest: 'dist/lib/'
         }]
       }
     }
@@ -45,7 +57,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-jsbeautifier');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('default', [ 'jsbeautifier', 'jshint', 'uglify' ]);
+  grunt.registerTask('default', [ 'jsbeautifier', 'jshint', 'uglify', 'copy' ]);
 
 };

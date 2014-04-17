@@ -1,0 +1,31 @@
+{
+  "name": "riggr",
+  "version": "0.5.0",
+  "homepage": "https://github.com/Fluidbyte/Riggr",
+  "authors": [
+    "fluidbyte <kent@fluidbyte.net>"
+  ],
+  "description": "Set of utils for developing SPA framework apps using RequireJS, Knockout and jQuery",
+  "keywords": [
+    "framework",
+    "spa",
+    "amd",
+    "requirejs",
+    "knockout",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "2.1.0",
+    "requirejs-text": "2.0.12",
+    "knockout": "http://knockoutjs.com/downloads/knockout-3.1.0.js",
+    "jquery": "2.1.0"
+  }
+}
