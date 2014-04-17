@@ -22,7 +22,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "devDependencies": {
     "requirejs": "2.1.0",
     "requirejs-text": "2.0.12",
     "knockout": "http://knockoutjs.com/downloads/knockout-3.1.0.js",
