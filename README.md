@@ -5,9 +5,9 @@ Set of utils for building web app's using [RequireJS](http://requirejs.org/),
 
 ## Usage
 
-Riggr can be easily installed via `bower install riggr`. The bower package 
-contains all core files and dependencies. The core utilizes a small set of the 
-dependencies' methods, so utilizing different versions can be done by simply 
+Riggr can be easily installed via `bower install riggr`. The bower package
+contains all core files and dependencies. The core utilizes a small set of the
+dependencies' methods, so utilizing different versions can be done by simply
 changing the path in your RequireJS config.
 
 The core idea behind Riggr is to establish a simple application scaffold by creating
@@ -69,7 +69,9 @@ define([
     // Route table
     routes: {
       '/': 'pages/one',
-      '/two': 'pages/two
+      '/two': 'pages/two',
+      // Example with parameter
+      '/two/:param': 'pages/two'
     }
   };
 
