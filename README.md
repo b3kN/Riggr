@@ -210,7 +210,7 @@ request.create('myReq', {
 });
 
 // Calling a stored request
-request.call('myReq')
+request.send('myReq')
   .done(function () {
     // ...
   })
@@ -234,7 +234,7 @@ request.create('myReq', {
 });
 
 // Calling stored request with parameter overrides
-request.call('myReq', { type: 'POST', data: { name: 'Foo' }})
+request.send('myReq', { type: 'POST', data: { name: 'Foo' }})
   .done(function () {
     // ...
   })
@@ -256,7 +256,7 @@ request.create('myReq', {
 });
 
 // Call request and replace {id} param in URL
-request.call('myReq', { url_params: { id: '383729282' }})
+request.send('myReq', { url_params: { id: '383729282' }})
   .done(function () {
     // ...
   })

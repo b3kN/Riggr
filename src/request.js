@@ -16,7 +16,7 @@
     stored: {},
 
     // Make request
-    call: function (req, opts) {
+    send: function (req, opts) {
       var reqObj;
       var checkType = function (obj) {
         return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
