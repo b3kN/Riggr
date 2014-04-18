@@ -6,7 +6,7 @@
   } else if (typeof exports === 'object') {
     module.exports = factory(require('router'), require('observer'), require('knockout'), require('jquery'));
   } else {
-    root.Requester = factory(root.router, root.observer, root.ko, root.$);
+    root.riggr = factory(root.router, root.observer, root.ko, root.$);
   }
 }(this, function (router, observer, ko) {
 
@@ -125,6 +125,10 @@
       observer.subscribe('onRoute', function () {
         app.onRoute.apply(app);
       });
+      // Check for 'load'
+      if (app.hasOwnProperty('load')) {
+        app.load.apply(app);
+      }
       // Process routes
       router.process();
     });

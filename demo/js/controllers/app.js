@@ -16,6 +16,11 @@ define([
       //
       '/404': '404'
     },
+    
+    // Run when app is loaded
+    load: function () {
+      console.log('APP LOADED');
+    },
 
     // On route loaded/changed
     onRoute: function () {

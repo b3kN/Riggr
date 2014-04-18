@@ -179,20 +179,90 @@ observer.unsubscribe(mysub);
 
 ### Requests
 
-The `{riggr-path}/request.js` file provides basic XHR functionality via jQuery. Controllers
+The `{riggr-path}/request.js` file provides AJAX/XHR request management. Controllers
 using this must explicitly pass it in using `define`, then can call the `request`
-method and attach to the returned jQuery XHR object:
+method and attach to the returned jQuery XHR object.
+
+Requests use jQuery's `$.ajax()` method but allow for storing and managing common 
+requests.
+
+#### Example of a standard call:
 
 ```javascript
-var req = request({
+var req = request.call({
   url: '/some/endpoint',
   type: 'POST',
-  payload: { foo: 'bar' }
+  data: { foo: 'bar' }
 });
 
 req.done(function() { .... });
 
 req.fail(function() { .... });
+```
+
+#### Using the storage capabilites:
+
+```javascript
+// Create a stored request
+request.create('myReq', {
+  url: '/some/endpoint/',
+  type: 'GET'
+});
+
+// Calling a stored request
+request.call('myReq')
+  .done(function () {
+    // ...
+  })
+  .fail(function () {
+    // ...
+  });
+
+// Removing a stored request
+request.remove('myReq');
+```
+
+#### Providing call parameters:
+
+The `request` object allows for the overriding of default/pre-defined properties 
+of the stored request with run-time properties:
+
+```javascript
+// Create request
+request.create('myReq', {
+  url: '/some/endpoint/'
+});
+
+// Calling stored request with parameter overrides
+request.call('myReq', { type: 'POST', data: { name: 'Foo' }})
+  .done(function () {
+    // ...
+  })
+  .fail(function () {
+    // ...
+  });
+```
+
+#### URL Parameters
+
+The `request` object allows for creating dynamic URL parameters through the 
+`url_params` property:
+
+```javascript
+// Create request
+request.create('myReq', {
+  url: '/some/endpoint/{id}/',
+  type: 'GET'
+});
+
+// Call request and replace {id} param in URL
+request.call('myReq', { url_params: { id: '383729282' }})
+  .done(function () {
+    // ...
+  })
+  .fail(function () {
+    // ...
+  });
 ```
 
 ## License
