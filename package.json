@@ -1,6 +1,6 @@
 {
   "name": "riggr",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Set of utilities for frameworking apps with RequireJS, Knockout and jQuery",
   "repository": {
     "type": "git",
