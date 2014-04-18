@@ -181,7 +181,7 @@ observer.unsubscribe(mysub);
 
 The `{riggr-path}/request.js` file provides AJAX/XHR request management. Controllers
 using this must explicitly pass it in using `define`, then can call the `request`
-method and attach to the returned jQuery XHR object.
+methods and attach to the returned jQuery XHR object.
 
 Requests use jQuery's `$.ajax()` method but allow for storing and managing common 
 requests.
@@ -263,6 +263,44 @@ request.call('myReq', { url_params: { id: '383729282' }})
   .fail(function () {
     // ...
   });
+```
+
+### Store
+
+The `{riggr-path}/store.js` file provides localStorage management. Controllers
+using this must explicitly pass it in using `define`, then can access the methods 
+provided:
+
+#### Set
+
+When setting, the `store.set` method will determine data type and parse the data 
+for storage
+
+```javascript
+// Set a string value
+store.set('myStoreString', 'foo');
+
+// Set an object or array (data is stringified for storage)
+store.set('myStoreObj', { foo: 'bar' });
+```
+
+#### Get
+
+When retrieving (getting) an item, the `store.get` method will parse the data to 
+return the original type:
+
+```javascript
+// Returns the origin object from the set example above
+store.get('myStoreObj');
+```
+
+#### Remove
+
+Using `store.remove` will clear an item from localStorage:
+
+```javascript
+// Removes the item and it's data
+store.remove('myStoreObj');
 ```
 
 ## License
