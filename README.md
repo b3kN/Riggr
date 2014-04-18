@@ -95,7 +95,7 @@ From here, routing guides all other initialization operations within the applica
 
 ### Routing
 
-Routes defined in `app` are monitored by the router for a match. When matched/called the 
+Routes defined in `app` are monitored by the router for a match. When matched/called the
 controllers respond to their assigned routes with the following methods:
 
 ```javascript
@@ -183,13 +183,13 @@ The `{riggr-path}/request.js` file provides AJAX/XHR request management. Control
 using this must explicitly pass it in using `define`, then can call the `request`
 methods and attach to the returned jQuery XHR object.
 
-Requests use jQuery's `$.ajax()` method but allow for storing and managing common 
+Requests use jQuery's `$.ajax()` method but allow for storing and managing common
 requests.
 
 #### Example of a standard call:
 
 ```javascript
-var req = request.call({
+var req = request.send({
   url: '/some/endpoint',
   type: 'POST',
   data: { foo: 'bar' }
@@ -224,7 +224,7 @@ request.remove('myReq');
 
 #### Providing call parameters:
 
-The `request` object allows for the overriding of default/pre-defined properties 
+The `request` object allows for the overriding of default/pre-defined properties
 of the stored request with run-time properties:
 
 ```javascript
@@ -245,7 +245,7 @@ request.send('myReq', { type: 'POST', data: { name: 'Foo' }})
 
 #### URL Parameters
 
-The `request` object allows for creating dynamic URL parameters through the 
+The `request` object allows for creating dynamic URL parameters through the
 `url_params` property:
 
 ```javascript
@@ -268,12 +268,12 @@ request.send('myReq', { url_params: { id: '383729282' }})
 ### Store
 
 The `{riggr-path}/store.js` file provides localStorage management. Controllers
-using this must explicitly pass it in using `define`, then can access the methods 
+using this must explicitly pass it in using `define`, then can access the methods
 provided:
 
 #### Set
 
-When setting, the `store.set` method will determine data type and parse the data 
+When setting, the `store.set` method will determine data type and parse the data
 for storage
 
 ```javascript
@@ -286,7 +286,7 @@ store.set('myStoreObj', { foo: 'bar' });
 
 #### Get
 
-When retrieving (getting) an item, the `store.get` method will parse the data to 
+When retrieving (getting) an item, the `store.get` method will parse the data to
 return the original type:
 
 ```javascript
