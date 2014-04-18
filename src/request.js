@@ -18,11 +18,16 @@
     // Make request
     call: function (req, opts) {
       var reqObj;
-      if (typeof req === 'string') {
+      var checkType = function (obj) {
+        return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+      };
+
+      // Determine type of call (stored or direct)
+      if (checkType(req) === 'string') {
         // Get from storage
         reqObj = this.stored[req];
         // Overwrite any stored opts
-        if (opts && typeof opts === 'object') {
+        if (opts && checkType(opts) === 'object') {
           for (var opt in opts) {
             // Only includes standars opts, not proprietary url_params
             if (opt !== 'url_params') {
@@ -30,7 +35,7 @@
             }
           }
         }
-      } else if (typeof req === 'object') {
+      } else if (checkType(req) === 'object') {
         // Set reqObj to the request
         reqObj = req;
       }
