@@ -49,14 +49,14 @@
 /* GLOBALS */
 
     h1,h2,h3,h4 {
-        margin: 25px 0;
+        margin: 0 0 25px 0;
         font-weight: bold;
         line-height: 100%;
     }
 
     h1 { font-size: 3em; }
-    h2 { font-size: 2.5em; }
-    h3 { font-size: 2em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.8em; }
     h4 { font-size: 1.5em; }
 
     a,a:link,a:visited {
@@ -90,6 +90,8 @@
 /* FORM ELEMENTS */
 
     label { display: block; margin: 10px 0 10px 0; font-size: 1.2em; font-weight: bold; }
+
+    label:first-of-type { margin-top: 0; }
 
     input, select, textarea {
         display: block;
@@ -188,4 +190,22 @@
         margin-top: 50%;
         text-align: center;
         font-weight: bold;
+    }
+
+    #viewContainer {
+        background: #f1f1f1;
+        padding: 30px;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+    }
+
+    .col {
+        display: inline-block;
+        width: 45%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .col.last {
+        margin-left: 5%;
     }

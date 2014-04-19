@@ -5,6 +5,10 @@ define([
   var one = {
 
     pageTitle: 'One',
+    
+    // Observables
+    email: ko.observable(),
+    password: ko.observable(),
 
     // Check before loading route
     // Not required, just an example:
@@ -22,6 +26,11 @@ define([
     // Not required, just an example
     unload: function () {
       console.log('Unloaded One');
+    },
+    
+    // Example method
+    processLogin: function () {
+      alert('Email: ' + this.email() + ', Password: ' + this.password());
     }
     
   };
