@@ -1,5 +1,8 @@
 // composer.js
 // Builds core application methods, binds routes, and loads init from app.js
+// ---
+// Part of the Riggr SPA framework <https://github.com/Fluidbyte/Riggr> and released
+// under the MIT license. This notice must remain intact.
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['router', 'observer', 'knockout', 'jquery'], factory);

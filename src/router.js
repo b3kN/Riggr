@@ -1,5 +1,8 @@
 // router.js
 // Creates client-side router
+// ---
+// Part of the Riggr SPA framework <https://github.com/Fluidbyte/Riggr> and released
+// under the MIT license. This notice must remain intact.
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     define([], factory);

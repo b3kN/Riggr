@@ -31,6 +31,9 @@ module.exports = function (grunt) {
     // Uglify Riggr file
     uglify: {
       riggr: {
+        options: {
+          banner: '/* Part of the Riggr SPA framework <https://github.com/Fluidbyte/Riggr> and released under the MIT license. This notice must remain intact. */\n'
+        },
         files: [{
           expand: true,
           cwd: 'src/',
