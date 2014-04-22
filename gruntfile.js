@@ -23,7 +23,7 @@ module.exports = function (grunt) {
           jshintrc: '.jshintrc'
         },
         files: {
-          src: 'src/*.js'
+          src: [ 'src/*.js', '!src/indexed.js' ]
         }
       }
     },

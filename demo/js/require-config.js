@@ -8,6 +8,7 @@ requirejs.config({
     'router': '../../src/router',
     'observer': '../../src/observer',
     'request': '../../src/request',
-    'store': '../../src/store'
+    'store': '../../src/store',
+    'indexed': '../../src/indexed'
   }
 });
